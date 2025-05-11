@@ -3,13 +3,12 @@ const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
 const { Server } = require('socket.io');
 const http = require('http');
 const { v4: uuidv4 } = require('uuid');
 const { logger } = require('./middleware/logger');
 const { correlationIdMiddleware } = require('./middleware/correlationId');
-const { connectDB } = require('./utils/db');
+const { connectDB, collections, client } = require('./utils/db');
 
 // Route imports
 const productRoutes = require('./routes/productRoutes');
@@ -26,12 +25,13 @@ const feedbackRoutes = require('./routes/feedbackRoutes');
 const stockRoutes = require('./routes/stockRoutes');
 const messageRoutes = require('./routes/messageRoutes');
 const emailRoutes = require('./routes/emailRoutes');
+const uploadRoutes = require('./routes/uploadRoutes');
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:4001', 'http://localhost:4002', 'http://localhost:4200'],
+    origin: ['http://localhost:4001', 'http://localhost:4002', 'http://localhost:4200', 'http://localhost:4000'],
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -55,22 +55,24 @@ app.use(
 );
 
 // Middleware
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(
   cors({
-    origin: ['http://localhost:4001', 'http://localhost:4002', 'http://localhost:4200'],
+    origin: ['http://localhost:4000','http://localhost:4001', 'http://localhost:4002', 'http://localhost:4200'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 app.use(correlationIdMiddleware);
+
+// Register Morgan correlationId token
+morgan.token('correlationId', (req) => req.correlationId || '-');
+
 app.use(
   morgan(':method :url :status :res[content-length] - :response-time ms - correlationId: :correlationId', {
-    stream: { write: (message) => logger.info(message.trim()) },
+    stream: { write: (message) => logger.info(message.trim(), { correlationId: 'http' }) },
   })
 );
 
@@ -89,10 +91,10 @@ app.use('/api/feedbacks', feedbackRoutes);
 app.use('/api/productstocks', stockRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/email', emailRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // WebSocket handling
 const clients = new Map();
-const messageCollection = require('./utils/db').collections.messageCollection;
 
 io.on('connection', (socket) => {
   console.log(`User connected: ${socket.id}`);
@@ -115,19 +117,24 @@ io.on('connection', (socket) => {
       targetUser: data.targetUser,
       timestamp: new Date(),
     };
-    await messageCollection.insertOne(newMessage);
-    logger.info('Đã lưu tin nhắn vào MongoDB', { message: newMessage, correlationId: 'socket' });
 
-    const targetSocketId = clients.get(data.targetUser);
-    if (targetSocketId) {
-      io.to(targetSocketId).emit('receiveMessage', {
-        user: data.user,
-        message: data.message,
-        targetUser: data.targetUser,
-      });
-      logger.info(`Đã gửi tin nhắn đến ${data.targetUser} (socket ID: ${targetSocketId})`, { correlationId: 'socket' });
-    } else {
-      logger.warn(`Không tìm thấy socket ID cho người dùng: ${data.targetUser}`, { correlationId: 'socket' });
+    try {
+      await collections.messageCollection.insertOne(newMessage);
+      logger.info('Đã lưu tin nhắn vào MongoDB', { message: newMessage, correlationId: 'socket' });
+
+      const targetSocketId = clients.get(data.targetUser);
+      if (targetSocketId) {
+        io.to(targetSocketId).emit('receiveMessage', {
+          user: data.user,
+          message: data.message,
+          targetUser: data.targetUser,
+        });
+        logger.info(`Đã gửi tin nhắn đến ${data.targetUser} (socket ID: ${targetSocketId})`, { correlationId: 'socket' });
+      } else {
+        logger.warn(`Không tìm thấy socket ID cho người dùng: ${data.targetUser}`, { correlationId: 'socket' });
+      }
+    } catch (err) {
+      logger.error('Lỗi khi lưu tin nhắn vào MongoDB', { error: err.message, correlationId: 'socket' });
     }
   });
 
@@ -158,7 +165,10 @@ async function startServer() {
 startServer();
 
 process.on('SIGTERM', async () => {
-  await require('./utils/db').client.close();
-  logger.info('MongoDB connection closed', { correlationId: 'system' });
-  process.exit(0);
+  logger.info('SIGTERM received. Closing server...', { correlationId: 'system' });
+  server.close(async () => {
+    await client.close();
+    logger.info('MongoDB connection closed', { correlationId: 'system' });
+    process.exit(0);
+  });
 });

@@ -1,56 +1,42 @@
 const { MongoClient, ObjectId } = require('mongodb');
 const { logger } = require('../middleware/logger');
 
-let client;
-let database;
-const collections = {
-  productCollection: null,
-  imageCollection: null,
-  categoryCollection: null,
-  reviewCollection: null,
-  orderDetailCollection: null,
-  accountCollection: null,
-  customerCollection: null,
-  productstockCollection: null,
-  blogCollection: null,
-  blogCategoryCollection: null,
-  faqCollection: null,
-  membershipCollection: null,
-  orderCollection: null,
-  messageCollection: null,
-};
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri, {
+  retryWrites: true,
+  maxPoolSize: 10,
+  serverSelectionTimeoutMS: 5000,
+  connectTimeoutMS: 10000
+});
+
+let collections = {};
 
 async function connectDB() {
-  const uri = process.env.MONGODB_URI;
-  client = new MongoClient(uri);
   try {
     await client.connect();
-    database = client.db('SaruData');
-    collections.productCollection = database.collection('products');
-    collections.imageCollection = database.collection('images');
- collections.categoryCollection = database.collection('productcategories');
-    collections.reviewCollection = database.collection('reviews');
-    collections.orderDetailCollection = database.collection('orderdetails');
+    const database = client.db('SaruData');
     collections.accountCollection = database.collection('accounts');
+    collections.productCollection = database.collection('products');
     collections.customerCollection = database.collection('customers');
-    collections.productstockCollection = database.collection('productstocks');
+    collections.cartCollection = database.collection('carts');
+    collections.compareCollection = database.collection('compares');
     collections.blogCollection = database.collection('blogs');
-    collections.blogCategoryCollection = database.collection('blogcategories');
+    collections.blogCategoryCollection = database.collection('blog_categories');
     collections.faqCollection = database.collection('faqs');
     collections.membershipCollection = database.collection('memberships');
     collections.orderCollection = database.collection('orders');
-    collections.messageCollection = database.collection('consultants');
-
-    await collections.productCollection.createIndex({ ProductID: 1 }, { unique: true });
-    await collections.accountCollection.createIndex({ CustomerEmail: 1 }, { unique: true });
-    await collections.productCollection.createIndex({ CateID: 1 });
-    await collections.reviewCollection.createIndex({ ProductID: 1, DatePosted: -1 });
-
-    logger.info('Connected to MongoDB', { correlationId: 'system' });
+    collections.orderDetailCollection = database.collection('order_details');
+    collections.reviewCollection = database.collection('reviews');
+    collections.productstockCollection = database.collection('productstocks');
+    collections.messageCollection = database.collection('messages');
+    collections.imageCollection = database.collection('images');
+    collections.categoryCollection = database.collection('productcategories');
+    collections.promotionCollection = database.collection('promotions');
+    logger.info('MongoDB connected successfully', { correlationId: 'system' });
   } catch (error) {
-    logger.error('Failed to connect to MongoDB', { error: error.message, correlationId: 'system' });
-    process.exit(1);
+    logger.error('MongoDB connection failed', { error: error.message, correlationId: 'system' });
+    throw error;
   }
 }
 
-module.exports = { connectDB, client, database, collections, ObjectId };
+module.exports = { connectDB, collections, client, ObjectId };

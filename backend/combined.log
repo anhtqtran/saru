@@ -1,0 +1,291 @@
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T08:58:09.207Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T08:58:09.213Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T08:58:09.930Z"}
+{"correlationId":"system","level":"info","message":"Cleaned up expired OTPs","timestamp":"2025-05-11T09:00:00.303Z"}
+{"correlationId":"0088771a-6410-4937-965a-6781bdbccd3f","level":"debug","message":"No token provided","path":"/","timestamp":"2025-05-11T09:08:26.061Z"}
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T09:08:57.186Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T09:08:57.191Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T09:08:57.744Z"}
+{"correlationId":"e62250be-5876-41cf-a3e8-f1808ac5e523","error":"Cannot read properties of undefined (reading 'collection')","level":"error","message":"Error in GET /products","timestamp":"2025-05-11T09:09:00.469Z"}
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T09:13:31.499Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T09:13:31.506Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T09:13:31.886Z"}
+{"correlationId":"cf347750-2687-41dd-ac35-faba08a474cb","level":"debug","message":"No token provided","path":"/","timestamp":"2025-05-11T09:13:37.755Z"}
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T09:40:27.859Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T09:40:27.865Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T09:40:28.329Z"}
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T09:41:27.150Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T09:41:27.154Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T09:41:27.521Z"}
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T09:45:19.644Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T09:45:19.650Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T09:45:20.077Z"}
+{"correlationId":"830bcf0a-c991-4fc9-8caf-d1c6f7494208","error":"Cannot read properties of undefined (reading 'collection')","level":"error","message":"Error in GET /products","timestamp":"2025-05-11T09:47:00.489Z"}
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T09:50:58.562Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T09:50:58.570Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T09:50:58.959Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T09:57:10.354Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T09:57:10.362Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T09:57:10.849Z"}
+{"correlationId":"14125d86-a161-4d2a-b4b0-06e015657378","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T09:57:23.901Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 4.166 ms - correlationId: 14125d86-a161-4d2a-b4b0-06e015657378","timestamp":"2025-05-11T09:57:23.911Z"}
+{"correlationId":"4608734a-aeb8-49a8-8408-05f8a7b26d31","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T09:57:37.856Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 2.043 ms - correlationId: 4608734a-aeb8-49a8-8408-05f8a7b26d31","timestamp":"2025-05-11T09:57:37.860Z"}
+{"correlationId":"324ae3cc-2156-4f99-a2d7-82e12ff32e00","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T09:57:53.431Z"}
+{"correlationId":"http","level":"info","message":"GET /api/best-selling 404 155 - 0.274 ms - correlationId: 324ae3cc-2156-4f99-a2d7-82e12ff32e00","timestamp":"2025-05-11T09:57:53.432Z"}
+{"correlationId":"system","level":"info","message":"Cleaned up expired OTPs","timestamp":"2025-05-11T10:00:00.979Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:01:49.347Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:01:49.352Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:01:50.233Z"}
+{"correlationId":"1a6ad13d-189c-4d70-8f65-2ae8bf07486a","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:01:53.744Z"}
+{"correlationId":"http","level":"info","message":"GET /api/best-selling 404 155 - 2.199 ms - correlationId: 1a6ad13d-189c-4d70-8f65-2ae8bf07486a","timestamp":"2025-05-11T10:01:53.748Z"}
+{"correlationId":"78b5b40c-c03a-4306-9639-63dfc2759a8b","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:02:02.296Z"}
+{"correlationId":"http","level":"info","message":"GET /api/product 404 150 - 1.115 ms - correlationId: 78b5b40c-c03a-4306-9639-63dfc2759a8b","timestamp":"2025-05-11T10:02:02.298Z"}
+{"correlationId":"b13af85a-bf90-4ecb-9b93-b9dfbfc074c8","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:02:18.132Z"}
+{"correlationId":"http","level":"info","message":"GET /api/product 404 150 - 0.327 ms - correlationId: b13af85a-bf90-4ecb-9b93-b9dfbfc074c8","timestamp":"2025-05-11T10:02:18.133Z"}
+{"correlationId":"98efe8a8-3dea-4e88-946f-a28e5a99d142","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:02:20.076Z"}
+{"correlationId":"98efe8a8-3dea-4e88-946f-a28e5a99d142","level":"info","limit":10,"message":"Products retrieved","page":1,"timestamp":"2025-05-11T10:02:20.233Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 200 33233 - 159.126 ms - correlationId: 98efe8a8-3dea-4e88-946f-a28e5a99d142","timestamp":"2025-05-11T10:02:20.237Z"}
+{"correlationId":"df486423-efe0-486c-a56a-a837dd65ab95","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:02:38.152Z"}
+{"correlationId":"http","level":"info","message":"GET /api/best-selling 404 155 - 0.380 ms - correlationId: df486423-efe0-486c-a56a-a837dd65ab95","timestamp":"2025-05-11T10:02:38.153Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:07:07.284Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:07:07.288Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:07:07.685Z"}
+{"correlationId":"89fd32e9-05d1-4b6b-b2a2-0da24cc84c69","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:07:11.250Z"}
+{"correlationId":"http","level":"info","message":"GET /api/best-selling 404 155 - 4.084 ms - correlationId: 89fd32e9-05d1-4b6b-b2a2-0da24cc84c69","timestamp":"2025-05-11T10:07:11.259Z"}
+{"correlationId":"9c269d10-b80f-47ce-b721-04bbbc4db8f4","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:07:19.139Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 2.745 ms - correlationId: 9c269d10-b80f-47ce-b721-04bbbc4db8f4","timestamp":"2025-05-11T10:07:19.143Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:09:07.164Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:09:07.170Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:09:08.394Z"}
+{"correlationId":"6c2f89c9-fc55-46a4-9819-bd8b575e182f","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:09:11.046Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 2.478 ms - correlationId: 6c2f89c9-fc55-46a4-9819-bd8b575e182f","timestamp":"2025-05-11T10:09:11.051Z"}
+{"correlationId":"327467d8-3791-417c-976b-f4660c06d22b","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:09:20.452Z"}
+{"correlationId":"http","level":"info","message":"GET /api/best-selling 404 155 - 2.269 ms - correlationId: 327467d8-3791-417c-976b-f4660c06d22b","timestamp":"2025-05-11T10:09:20.456Z"}
+{"correlationId":"ef14f546-f281-4a22-b301-9d361bc22a79","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:09:38.839Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products? 404 151 - 0.752 ms - correlationId: ef14f546-f281-4a22-b301-9d361bc22a79","timestamp":"2025-05-11T10:09:38.841Z"}
+{"correlationId":"af8c6ff8-f9be-4f62-a9d6-dfc336216a4c","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:09:45.950Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 0.435 ms - correlationId: af8c6ff8-f9be-4f62-a9d6-dfc336216a4c","timestamp":"2025-05-11T10:09:45.951Z"}
+{"correlationId":"26c51b62-d6f7-4be6-8099-6938cf6af164","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:12:44.035Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 1.498 ms - correlationId: 26c51b62-d6f7-4be6-8099-6938cf6af164","timestamp":"2025-05-11T10:12:44.039Z"}
+{"correlationId":"9f877608-657b-406c-8f46-f0475ea79c93","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:13:57.232Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 0.435 ms - correlationId: 9f877608-657b-406c-8f46-f0475ea79c93","timestamp":"2025-05-11T10:13:57.235Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:14:27.446Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:14:27.451Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:14:28.363Z"}
+{"correlationId":"df157984-8c40-4247-8e8d-336661745656","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:14:31.889Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 2.279 ms - correlationId: df157984-8c40-4247-8e8d-336661745656","timestamp":"2025-05-11T10:14:31.895Z"}
+{"correlationId":"a93b0b20-2fb8-4280-a417-541c778277c0","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:15:43.995Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 1.057 ms - correlationId: a93b0b20-2fb8-4280-a417-541c778277c0","timestamp":"2025-05-11T10:15:43.998Z"}
+{"correlationId":"9f061e97-1122-41ac-9af5-c04a20c7eeb2","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:15:46.058Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 404 151 - 0.549 ms - correlationId: 9f061e97-1122-41ac-9af5-c04a20c7eeb2","timestamp":"2025-05-11T10:15:46.061Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:15:54.281Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:15:54.289Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:15:54.772Z"}
+{"correlationId":"85db3609-134e-4d6e-9813-a9486accc91d","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:15:58.857Z"}
+{"correlationId":"85db3609-134e-4d6e-9813-a9486accc91d","level":"info","limit":10,"message":"Products retrieved","page":1,"timestamp":"2025-05-11T10:15:59.048Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 200 33233 - 192.661 ms - correlationId: 85db3609-134e-4d6e-9813-a9486accc91d","timestamp":"2025-05-11T10:15:59.054Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:20:19.998Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:20:20.007Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:20:20.664Z"}
+{"correlationId":"94dd9986-582b-4320-942c-6b93a3949f20","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:20:23.815Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 200 22081 - 729.291 ms - correlationId: 94dd9986-582b-4320-942c-6b93a3949f20","timestamp":"2025-05-11T10:20:24.550Z"}
+{"correlationId":"cf488fda-afea-4141-9d8c-b12da003bc32","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:22:22.134Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best 200 2 - 64.466 ms - correlationId: cf488fda-afea-4141-9d8c-b12da003bc32","timestamp":"2025-05-11T10:22:22.200Z"}
+{"correlationId":"d1d1aaa0-512c-498f-bd3e-6af074073529","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:22:33.134Z"}
+{"correlationId":"d1d1aaa0-512c-498f-bd3e-6af074073529","error":"Cannot read properties of undefined (reading 'isValid')","id":"best-selling","level":"error","message":"Error fetching product detail","stack":"TypeError: Cannot read properties of undefined (reading 'isValid')\n    at D:\\UEL\\NEW\\saru\\backend\\routes\\productRoutes.js:566:19\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)","timestamp":"2025-05-11T10:22:33.140Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best-selling 500 126 - 5.732 ms - correlationId: d1d1aaa0-512c-498f-bd3e-6af074073529","timestamp":"2025-05-11T10:22:33.141Z"}
+{"correlationId":"62f99cb5-7a60-4c2d-8e19-617aa06143e1","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:22:45.593Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 200 22081 - 444.649 ms - correlationId: 62f99cb5-7a60-4c2d-8e19-617aa06143e1","timestamp":"2025-05-11T10:22:46.039Z"}
+{"correlationId":"4036fdef-73f8-44b4-a537-095e7c546a42","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:23:00.199Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/67cedd78aaf7ee8b1e4bf2e6 404 46 - 63.176 ms - correlationId: 4036fdef-73f8-44b4-a537-095e7c546a42","timestamp":"2025-05-11T10:23:00.264Z"}
+{"correlationId":"7e4ec1bd-202e-4f5a-b12b-c4719bd550ad","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:23:31.245Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/categories 200 1412 - 61.243 ms - correlationId: 7e4ec1bd-202e-4f5a-b12b-c4719bd550ad","timestamp":"2025-05-11T10:23:31.309Z"}
+{"correlationId":"25e838b4-9993-4354-86ae-babec55ff3be","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:23:37.897Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/filters 200 1937 - 247.053 ms - correlationId: 25e838b4-9993-4354-86ae-babec55ff3be","timestamp":"2025-05-11T10:23:38.145Z"}
+{"correlationId":"fc24477a-5ff6-4657-aa24-64283df61fcf","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:23:45.079Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/recommendations 200 34 - 130.538 ms - correlationId: fc24477a-5ff6-4657-aa24-64283df61fcf","timestamp":"2025-05-11T10:23:45.212Z"}
+{"correlationId":"b8c1f15b-3c69-4a43-8648-dd83fe332e18","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:23:55.118Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/full-details 200 30040 - 141.280 ms - correlationId: b8c1f15b-3c69-4a43-8648-dd83fe332e18","timestamp":"2025-05-11T10:23:55.261Z"}
+{"correlationId":"92451d3c-98af-4b31-988c-f6c5dbdf2a8d","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:24:04.401Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/full-details/67cedd78aaf7ee8b1e4bf2e6 404 189 - 4.936 ms - correlationId: 92451d3c-98af-4b31-988c-f6c5dbdf2a8d","timestamp":"2025-05-11T10:24:04.409Z"}
+{"correlationId":"b003f9f1-7d11-4464-8f73-8f9bc66e0bea","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:24:16.267Z"}
+{"correlationId":"b003f9f1-7d11-4464-8f73-8f9bc66e0bea","error":"Cannot read properties of undefined (reading 'isValid')","id":"67cedd78aaf7ee8b1e4bf2e6","level":"error","message":"Error fetching product detail","stack":"TypeError: Cannot read properties of undefined (reading 'isValid')\n    at D:\\UEL\\NEW\\saru\\backend\\routes\\productRoutes.js:566:19\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)","timestamp":"2025-05-11T10:24:16.268Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/67cedd78aaf7ee8b1e4bf2e6 500 126 - 1.971 ms - correlationId: b003f9f1-7d11-4464-8f73-8f9bc66e0bea","timestamp":"2025-05-11T10:24:16.270Z"}
+{"correlationId":"7830e9b5-732c-42bc-8efb-706bcfe3baf1","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:24:30.648Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/ 200 22081 - 445.053 ms - correlationId: 7830e9b5-732c-42bc-8efb-706bcfe3baf1","timestamp":"2025-05-11T10:24:31.094Z"}
+{"correlationId":"6cb368f6-550e-415b-9f83-8a37ad828e48","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:24:36.989Z"}
+{"correlationId":"6cb368f6-550e-415b-9f83-8a37ad828e48","error":"Cannot read properties of undefined (reading 'isValid')","id":"pro46","level":"error","message":"Error fetching product detail","stack":"TypeError: Cannot read properties of undefined (reading 'isValid')\n    at D:\\UEL\\NEW\\saru\\backend\\routes\\productRoutes.js:566:19\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)","timestamp":"2025-05-11T10:24:36.990Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/pro46 500 126 - 1.512 ms - correlationId: 6cb368f6-550e-415b-9f83-8a37ad828e48","timestamp":"2025-05-11T10:24:36.992Z"}
+{"correlationId":"0e70b2a2-44d7-4e76-bdf8-99d1c5da3437","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:24:45.383Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 200 22081 - 441.153 ms - correlationId: 0e70b2a2-44d7-4e76-bdf8-99d1c5da3437","timestamp":"2025-05-11T10:24:45.825Z"}
+{"correlationId":"e574c571-bd24-4fab-bee5-cdcd741d9fa5","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:25:13.852Z"}
+{"correlationId":"e574c571-bd24-4fab-bee5-cdcd741d9fa5","error":"Cannot read properties of undefined (reading 'isValid')","id":"67cedd78aaf7ee8b1e4bf2e6","level":"error","message":"Error fetching product detail","stack":"TypeError: Cannot read properties of undefined (reading 'isValid')\n    at D:\\UEL\\NEW\\saru\\backend\\routes\\productRoutes.js:566:19\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)","timestamp":"2025-05-11T10:25:13.853Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/67cedd78aaf7ee8b1e4bf2e6 500 126 - 1.630 ms - correlationId: e574c571-bd24-4fab-bee5-cdcd741d9fa5","timestamp":"2025-05-11T10:25:13.855Z"}
+{"correlationId":"0e7ef18b-de32-4b7c-b6de-63a9d74ab77b","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:25:17.731Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 200 22081 - 444.960 ms - correlationId: 0e7ef18b-de32-4b7c-b6de-63a9d74ab77b","timestamp":"2025-05-11T10:25:18.177Z"}
+{"correlationId":"0cc87d5a-3344-44c4-b279-0043986ca4bb","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:25:35.899Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best 200 2 - 64.437 ms - correlationId: 0cc87d5a-3344-44c4-b279-0043986ca4bb","timestamp":"2025-05-11T10:25:35.964Z"}
+{"correlationId":"55f79426-c3b5-48ed-b893-914815c4c868","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:25:56.598Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/67cedd78aaf7ee8b1e4bf2e6 404 46 - 64.626 ms - correlationId: 55f79426-c3b5-48ed-b893-914815c4c868","timestamp":"2025-05-11T10:25:56.665Z"}
+{"correlationId":"78320b73-f058-40ae-99d3-082b4d839d06","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:26:02.185Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/pro46 200 34 - 61.711 ms - correlationId: 78320b73-f058-40ae-99d3-082b4d839d06","timestamp":"2025-05-11T10:26:02.248Z"}
+{"correlationId":"92383538-db9d-4ab5-85a7-c39c1d4d18fa","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:26:17.434Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best-detail/pro46 404 46 - 69.138 ms - correlationId: 92383538-db9d-4ab5-85a7-c39c1d4d18fa","timestamp":"2025-05-11T10:26:17.506Z"}
+{"correlationId":"e6c1f82e-b448-42dd-ad97-d715deae4012","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:26:25.218Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best-detail/67cedd78aaf7ee8b1e4bf2e6 404 46 - 63.253 ms - correlationId: e6c1f82e-b448-42dd-ad97-d715deae4012","timestamp":"2025-05-11T10:26:25.282Z"}
+{"correlationId":"088d62ac-6080-44c7-994e-cfe8dff31f5e","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:26:46.649Z"}
+{"correlationId":"088d62ac-6080-44c7-994e-cfe8dff31f5e","level":"warn","message":"Missing keyword for search","timestamp":"2025-05-11T10:26:46.652Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search 400 31 - 2.876 ms - correlationId: 088d62ac-6080-44c7-994e-cfe8dff31f5e","timestamp":"2025-05-11T10:26:46.653Z"}
+{"correlationId":"a9d4e518-998b-496e-a44e-af6063befb75","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:26:55.012Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search/pro46 404 164 - 1.200 ms - correlationId: a9d4e518-998b-496e-a44e-af6063befb75","timestamp":"2025-05-11T10:26:55.015Z"}
+{"correlationId":"d9178226-0b6e-4e40-8552-1e608c5d8c47","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:27:00.559Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search/r%C6%B0%E1%BB%A3u 404 176 - 0.329 ms - correlationId: d9178226-0b6e-4e40-8552-1e608c5d8c47","timestamp":"2025-05-11T10:27:00.560Z"}
+{"correlationId":"bafef782-7c55-4151-835f-eead352c6475","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:28:04.820Z"}
+{"correlationId":"bafef782-7c55-4151-835f-eead352c6475","error":"Cannot read properties of undefined (reading 'isValid')","id":"best route hit","level":"error","message":"Error fetching product detail","stack":"TypeError: Cannot read properties of undefined (reading 'isValid')\n    at D:\\UEL\\NEW\\saru\\backend\\routes\\productRoutes.js:566:19\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (D:\\UEL\\NEW\\saru\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)","timestamp":"2025-05-11T10:28:04.823Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best%20route%20hit 500 126 - 3.835 ms - correlationId: bafef782-7c55-4151-835f-eead352c6475","timestamp":"2025-05-11T10:28:04.825Z"}
+{"correlationId":"dfbb0c03-3a72-40e3-863f-0a2441715067","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:28:22.492Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best 200 2 - 64.045 ms - correlationId: dfbb0c03-3a72-40e3-863f-0a2441715067","timestamp":"2025-05-11T10:28:22.557Z"}
+{"correlationId":"c5929a5d-876c-40d9-ab9a-4654eec31e58","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:28:56.067Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/:pro46 404 46 - 62.111 ms - correlationId: c5929a5d-876c-40d9-ab9a-4654eec31e58","timestamp":"2025-05-11T10:28:56.130Z"}
+{"correlationId":"ad486d70-201c-4138-9322-50e4f420c43f","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:29:03.826Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/:67cedd78aaf7ee8b1e4bf2e6 404 46 - 62.101 ms - correlationId: ad486d70-201c-4138-9322-50e4f420c43f","timestamp":"2025-05-11T10:29:03.889Z"}
+{"correlationId":"e9ba5824-35a8-4514-b852-00586e2c9282","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:29:09.302Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/67cedd78aaf7ee8b1e4bf2e6 404 46 - 62.022 ms - correlationId: e9ba5824-35a8-4514-b852-00586e2c9282","timestamp":"2025-05-11T10:29:09.367Z"}
+{"correlationId":"system","level":"info","message":"Connected to MongoDB","timestamp":"2025-05-11T10:31:18.110Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:31:18.115Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:31:18.332Z"}
+{"correlationId":"366f0a03-3c5d-4f22-a586-f0ec47b71e7d","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:31:45.617Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/67cedd78aaf7ee8b1e4bf2e6 404 46 - 71.567 ms - correlationId: 366f0a03-3c5d-4f22-a586-f0ec47b71e7d","timestamp":"2025-05-11T10:31:45.692Z"}
+{"correlationId":"727fb559-66d2-45df-a05e-9afc41935ea7","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:31:49.124Z"}
+{"correlationId":"727fb559-66d2-45df-a05e-9afc41935ea7","level":"error","message":"One or more collections not initialized","timestamp":"2025-05-11T10:31:49.127Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 500 38 - 3.070 ms - correlationId: 727fb559-66d2-45df-a05e-9afc41935ea7","timestamp":"2025-05-11T10:31:49.129Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:33:54.159Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:33:54.167Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:33:54.674Z"}
+{"correlationId":"8af4c00f-0bd0-438a-a82e-c69792141b82","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:33:59.544Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products 200 22081 - 618.119 ms - correlationId: 8af4c00f-0bd0-438a-a82e-c69792141b82","timestamp":"2025-05-11T10:34:00.166Z"}
+{"correlationId":"665ef1fd-d5a8-4a9c-abc4-b604276457f3","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:34:11.354Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/67cedd78aaf7ee8b1e4bf2e6 200 2219 - 308.049 ms - correlationId: 665ef1fd-d5a8-4a9c-abc4-b604276457f3","timestamp":"2025-05-11T10:34:11.664Z"}
+{"correlationId":"81420d99-dbfe-4a7b-9021-e2803bf0e05b","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:34:28.211Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best 200 2 - 56.330 ms - correlationId: 81420d99-dbfe-4a7b-9021-e2803bf0e05b","timestamp":"2025-05-11T10:34:28.269Z"}
+{"correlationId":"a636d115-276e-4391-84d7-a9f8d8d867d4","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:34:55.897Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/map/pro46 200 34 - 50.146 ms - correlationId: a636d115-276e-4391-84d7-a9f8d8d867d4","timestamp":"2025-05-11T10:34:55.948Z"}
+{"correlationId":"9b67d510-d3fa-494e-bf53-9614672f1b96","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:35:33.003Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/best-detail/pro46 404 46 - 52.596 ms - correlationId: 9b67d510-d3fa-494e-bf53-9614672f1b96","timestamp":"2025-05-11T10:35:33.057Z"}
+{"correlationId":"624c65b1-bd93-422a-9dd4-4e33bd3c6f7c","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:36:00.868Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search?q=r%C6%B0%E1%BB%A3u 200 115 - 50.938 ms - correlationId: 624c65b1-bd93-422a-9dd4-4e33bd3c6f7c","timestamp":"2025-05-11T10:36:00.920Z"}
+{"correlationId":"ad768cbc-b60b-44f3-b72b-c2eeb283a5e2","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:36:48.185Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search?q=qu%C3%A0 200 192 - 51.808 ms - correlationId: ad768cbc-b60b-44f3-b72b-c2eeb283a5e2","timestamp":"2025-05-11T10:36:48.238Z"}
+{"correlationId":"a591be98-36f3-4df1-a46f-060677b49996","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:36:51.502Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search?q=h 200 131 - 55.379 ms - correlationId: a591be98-36f3-4df1-a46f-060677b49996","timestamp":"2025-05-11T10:36:51.559Z"}
+{"correlationId":"60f15154-7f5a-4195-8c09-fb05a51b696d","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:36:54.241Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search?q=s 200 182 - 52.118 ms - correlationId: 60f15154-7f5a-4195-8c09-fb05a51b696d","timestamp":"2025-05-11T10:36:54.295Z"}
+{"correlationId":"1c3b7f32-bc2a-4dba-b45f-5a5169ee10af","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:36:59.649Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search?q=c 200 154 - 53.954 ms - correlationId: 1c3b7f32-bc2a-4dba-b45f-5a5169ee10af","timestamp":"2025-05-11T10:36:59.706Z"}
+{"correlationId":"cb031b02-c4de-4a3e-969d-407665b0d33f","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:37:02.123Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search?q=cua 200 2 - 48.135 ms - correlationId: cb031b02-c4de-4a3e-969d-407665b0d33f","timestamp":"2025-05-11T10:37:02.172Z"}
+{"correlationId":"2c0a7da1-7f89-4e8a-8bdf-e07858cece61","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:37:05.236Z"}
+{"correlationId":"http","level":"info","message":"GET /api/products/search?q=ba 200 157 - 50.797 ms - correlationId: 2c0a7da1-7f89-4e8a-8bdf-e07858cece61","timestamp":"2025-05-11T10:37:05.288Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:42:03.663Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:42:03.669Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:42:04.194Z"}
+{"correlationId":"system","level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-11T10:42:29.687Z"}
+{"correlationId":"system","level":"info","message":"Server running on port 4000","timestamp":"2025-05-11T10:42:29.691Z"}
+{"correlationId":"system","level":"info","message":"Nodemailer is ready to send emails","timestamp":"2025-05-11T10:42:30.320Z"}
+{"correlationId":"7515215b-5f20-4c26-ba28-67d543a0f04b","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:45:46.952Z"}
+{"correlationId":"http","level":"info","message":"GET /api/ordersAuthorization:%20Bearer%20%3Cvalid_jwt_token%3E 404 196 - 5.715 ms - correlationId: 7515215b-5f20-4c26-ba28-67d543a0f04b","timestamp":"2025-05-11T10:45:46.964Z"}
+{"correlationId":"2a54df0d-e743-498e-8055-a904423d695d","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:45:52.405Z"}
+{"correlationId":"2a54df0d-e743-498e-8055-a904423d695d","level":"debug","message":"No token provided","path":"/","timestamp":"2025-05-11T10:45:52.406Z"}
+{"correlationId":"2a54df0d-e743-498e-8055-a904423d695d","level":"warn","message":"Unauthorized order access attempt","timestamp":"2025-05-11T10:45:52.412Z"}
+{"correlationId":"http","level":"info","message":"GET /api/orders 401 51 - 10.484 ms - correlationId: 2a54df0d-e743-498e-8055-a904423d695d","timestamp":"2025-05-11T10:45:52.419Z"}
+{"correlationId":"f52e6e85-dbe5-4113-adcd-6a5607b45076","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:46:04.314Z"}
+{"correlationId":"f52e6e85-dbe5-4113-adcd-6a5607b45076","level":"warn","message":"Unauthorized order access attempt","timestamp":"2025-05-11T10:46:04.320Z"}
+{"correlationId":"http","level":"info","message":"GET /api/orders 401 51 - 5.666 ms - correlationId: f52e6e85-dbe5-4113-adcd-6a5607b45076","timestamp":"2025-05-11T10:46:04.321Z"}
+{"correlationId":"f2843fb5-5a92-4b50-b860-f6f7014ce1b3","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:48:15.497Z"}
+{"body":{"email":"@"},"correlationId":"f2843fb5-5a92-4b50-b860-f6f7014ce1b3","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:48:15.535Z"}
+{"correlationId":"f2843fb5-5a92-4b50-b860-f6f7014ce1b3","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:48:15.535Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 39.415 ms - correlationId: f2843fb5-5a92-4b50-b860-f6f7014ce1b3","timestamp":"2025-05-11T10:48:15.539Z"}
+{"correlationId":"a7a62875-e647-4faa-a9da-e6114a50a9b4","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:49:05.063Z"}
+{"body":{"email":"@"},"correlationId":"a7a62875-e647-4faa-a9da-e6114a50a9b4","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:49:05.065Z"}
+{"correlationId":"a7a62875-e647-4faa-a9da-e6114a50a9b4","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:49:05.066Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 4.160 ms - correlationId: a7a62875-e647-4faa-a9da-e6114a50a9b4","timestamp":"2025-05-11T10:49:05.069Z"}
+{"correlationId":"34807c17-b559-430b-a17a-c369aa03b1bb","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:49:20.105Z"}
+{"body":{"email":"@"},"correlationId":"34807c17-b559-430b-a17a-c369aa03b1bb","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:49:20.108Z"}
+{"correlationId":"34807c17-b559-430b-a17a-c369aa03b1bb","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:49:20.109Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 4.039 ms - correlationId: 34807c17-b559-430b-a17a-c369aa03b1bb","timestamp":"2025-05-11T10:49:20.112Z"}
+{"correlationId":"5518dedc-27b4-4336-b103-3f7854b4c992","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:49:37.349Z"}
+{"body":{"email":"@"},"correlationId":"5518dedc-27b4-4336-b103-3f7854b4c992","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:49:37.351Z"}
+{"correlationId":"5518dedc-27b4-4336-b103-3f7854b4c992","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:49:37.351Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 1.772 ms - correlationId: 5518dedc-27b4-4336-b103-3f7854b4c992","timestamp":"2025-05-11T10:49:37.352Z"}
+{"correlationId":"0d131ba5-800b-4a31-99b4-bf0a7dd02adc","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:51:04.552Z"}
+{"body":{"email":"@"},"correlationId":"0d131ba5-800b-4a31-99b4-bf0a7dd02adc","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:51:04.556Z"}
+{"correlationId":"0d131ba5-800b-4a31-99b4-bf0a7dd02adc","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:51:04.556Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 3.090 ms - correlationId: 0d131ba5-800b-4a31-99b4-bf0a7dd02adc","timestamp":"2025-05-11T10:51:04.557Z"}
+{"correlationId":"f858c874-ad47-4b29-804d-b9a432d78a80","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:51:17.442Z"}
+{"body":{"email":"@"},"correlationId":"f858c874-ad47-4b29-804d-b9a432d78a80","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:51:17.444Z"}
+{"correlationId":"f858c874-ad47-4b29-804d-b9a432d78a80","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:51:17.444Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 1.768 ms - correlationId: f858c874-ad47-4b29-804d-b9a432d78a80","timestamp":"2025-05-11T10:51:17.446Z"}
+{"correlationId":"ee65a982-1922-4f75-899d-a8c854467404","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:52:34.918Z"}
+{"correlationId":"http","level":"info","message":"POST /api/login 404 149 - 5.478 ms - correlationId: ee65a982-1922-4f75-899d-a8c854467404","timestamp":"2025-05-11T10:52:34.925Z"}
+{"correlationId":"c5657b57-f250-414b-b5fb-f5589af0dfaa","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:52:50.270Z"}
+{"body":{"email":"@"},"correlationId":"c5657b57-f250-414b-b5fb-f5589af0dfaa","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:52:50.272Z"}
+{"correlationId":"c5657b57-f250-414b-b5fb-f5589af0dfaa","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:52:50.272Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 2.003 ms - correlationId: c5657b57-f250-414b-b5fb-f5589af0dfaa","timestamp":"2025-05-11T10:52:50.273Z"}
+{"correlationId":"0adf8004-a44d-41d5-a1ee-62bae811e649","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:53:05.628Z"}
+{"body":{"email":"@","query":"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "},"correlationId":"0adf8004-a44d-41d5-a1ee-62bae811e649","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:53:05.629Z"}
+{"correlationId":"0adf8004-a44d-41d5-a1ee-62bae811e649","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:53:05.630Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 1.736 ms - correlationId: 0adf8004-a44d-41d5-a1ee-62bae811e649","timestamp":"2025-05-11T10:53:05.630Z"}
+{"correlationId":"9f88c035-7bd1-420b-8e55-990f8035e80e","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:53:52.662Z"}
+{"body":{"email":"@"},"correlationId":"9f88c035-7bd1-420b-8e55-990f8035e80e","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:53:52.664Z"}
+{"correlationId":"9f88c035-7bd1-420b-8e55-990f8035e80e","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:53:52.664Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 1.430 ms - correlationId: 9f88c035-7bd1-420b-8e55-990f8035e80e","timestamp":"2025-05-11T10:53:52.665Z"}
+{"correlationId":"8d4380bc-176a-4bd6-89b2-98f5c3a34c60","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:55:30.546Z"}
+{"correlationId":"8d4380bc-176a-4bd6-89b2-98f5c3a34c60","error":"jwt malformed","level":"warn","message":"Invalid token","path":"/","timestamp":"2025-05-11T10:55:30.553Z"}
+{"correlationId":"http","level":"info","message":"POST /api/blogs 403 38 - 6.406 ms - correlationId: 8d4380bc-176a-4bd6-89b2-98f5c3a34c60","timestamp":"2025-05-11T10:55:30.555Z"}
+{"correlationId":"1ff5c71e-0cda-4e56-80c8-249bc534f40c","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:56:14.335Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/lign 404 153 - 0.321 ms - correlationId: 1ff5c71e-0cda-4e56-80c8-249bc534f40c","timestamp":"2025-05-11T10:56:14.337Z"}
+{"correlationId":"81fc81a5-43c3-40c8-92fa-1822bb9ca233","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:56:18.014Z"}
+{"body":{"email":"james.davis@x.dummyjson.com","password":"Jamesdpass123456"},"correlationId":"81fc81a5-43c3-40c8-92fa-1822bb9ca233","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:56:18.023Z"}
+{"correlationId":"81fc81a5-43c3-40c8-92fa-1822bb9ca233","email":"james.davis@x.dummyjson.com","level":"debug","message":"Login attempt","timestamp":"2025-05-11T10:56:18.023Z"}
+{"correlationId":"81fc81a5-43c3-40c8-92fa-1822bb9ca233","email":"james.davis@x.dummyjson.com","error":"Cannot read properties of undefined (reading 'collection')","level":"error","message":"Error synchronizing session data to MongoDB during login","timestamp":"2025-05-11T10:56:18.285Z"}
+{"correlationId":"81fc81a5-43c3-40c8-92fa-1822bb9ca233","customerId":"cus4","email":"james.davis@x.dummyjson.com","level":"info","message":"User logged in successfully","timestamp":"2025-05-11T10:56:18.286Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 200 335 - 272.673 ms - correlationId: 81fc81a5-43c3-40c8-92fa-1822bb9ca233","timestamp":"2025-05-11T10:56:18.288Z"}
+{"correlationId":"d9f46e68-7662-4962-a028-3a2c5f274ad3","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:56:37.095Z"}
+{"correlationId":"d9f46e68-7662-4962-a028-3a2c5f274ad3","error":"jwt malformed","level":"warn","message":"Invalid token","path":"/","timestamp":"2025-05-11T10:56:37.097Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 403 38 - 1.544 ms - correlationId: d9f46e68-7662-4962-a028-3a2c5f274ad3","timestamp":"2025-05-11T10:56:37.098Z"}
+{"correlationId":"a511e96c-2b72-4684-97e6-bdf1e435afcb","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:56:57.378Z"}
+{"correlationId":"a511e96c-2b72-4684-97e6-bdf1e435afcb","error":"jwt malformed","level":"warn","message":"Invalid token","path":"/","timestamp":"2025-05-11T10:56:57.379Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 403 38 - 0.570 ms - correlationId: a511e96c-2b72-4684-97e6-bdf1e435afcb","timestamp":"2025-05-11T10:56:57.380Z"}
+{"correlationId":"ebfe742c-7fb4-4925-bd3b-363ea5b4a3e5","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:57:02.172Z"}
+{"correlationId":"ebfe742c-7fb4-4925-bd3b-363ea5b4a3e5","error":"jwt malformed","level":"warn","message":"Invalid token","path":"/","timestamp":"2025-05-11T10:57:02.173Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 403 38 - 0.782 ms - correlationId: ebfe742c-7fb4-4925-bd3b-363ea5b4a3e5","timestamp":"2025-05-11T10:57:02.174Z"}
+{"correlationId":"0be1763b-2529-42ba-ba2f-9c2c9df03cdd","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:57:20.246Z"}
+{"body":{"email":"@","items":[{"productId":"pro46","quantity":2}],"paymentMethod":"CreditCard","shippingAddress":{"address":"123 Main St","city":"Hanoi","country":"Vietnam","postalCode":"100000"}},"correlationId":"0be1763b-2529-42ba-ba2f-9c2c9df03cdd","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:57:20.248Z"}
+{"correlationId":"0be1763b-2529-42ba-ba2f-9c2c9df03cdd","errors":[{"location":"body","msg":"Invalid value","path":"email","type":"field"},{"location":"body","msg":"Invalid value","path":"password","type":"field"}],"level":"warn","message":"Validation failed in /login","timestamp":"2025-05-11T10:57:20.248Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 400 214 - 2.155 ms - correlationId: 0be1763b-2529-42ba-ba2f-9c2c9df03cdd","timestamp":"2025-05-11T10:57:20.249Z"}
+{"correlationId":"f2963208-2ae5-4d43-a78c-efce028bc548","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:57:23.783Z"}
+{"body":{"email":"james.davis@x.dummyjson.com","password":"Jamesdpass123456"},"correlationId":"f2963208-2ae5-4d43-a78c-efce028bc548","level":"debug","message":"Received login request","timestamp":"2025-05-11T10:57:23.785Z"}
+{"correlationId":"f2963208-2ae5-4d43-a78c-efce028bc548","email":"james.davis@x.dummyjson.com","level":"debug","message":"Login attempt","timestamp":"2025-05-11T10:57:23.785Z"}
+{"correlationId":"f2963208-2ae5-4d43-a78c-efce028bc548","email":"james.davis@x.dummyjson.com","error":"Cannot read properties of undefined (reading 'collection')","level":"error","message":"Error synchronizing session data to MongoDB during login","timestamp":"2025-05-11T10:57:23.953Z"}
+{"correlationId":"f2963208-2ae5-4d43-a78c-efce028bc548","customerId":"cus4","email":"james.davis@x.dummyjson.com","level":"info","message":"User logged in successfully","timestamp":"2025-05-11T10:57:23.953Z"}
+{"correlationId":"http","level":"info","message":"POST /api/auth/login 200 335 - 170.272 ms - correlationId: f2963208-2ae5-4d43-a78c-efce028bc548","timestamp":"2025-05-11T10:57:23.954Z"}
+{"correlationId":"f06aa236-4371-4cd3-a044-403a53fc73ef","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:58:23.375Z"}
+{"correlationId":"f06aa236-4371-4cd3-a044-403a53fc73ef","error":"jwt malformed","level":"warn","message":"Invalid token","path":"/","timestamp":"2025-05-11T10:58:23.376Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 403 38 - 0.899 ms - correlationId: f06aa236-4371-4cd3-a044-403a53fc73ef","timestamp":"2025-05-11T10:58:23.378Z"}
+{"correlationId":"ed34b689-9c95-4d65-a76e-d8de49809fb8","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:58:45.379Z"}
+{"correlationId":"ed34b689-9c95-4d65-a76e-d8de49809fb8","level":"warn","message":"Unauthorized order creation attempt","timestamp":"2025-05-11T10:58:45.426Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 401 51 - 43.969 ms - correlationId: ed34b689-9c95-4d65-a76e-d8de49809fb8","timestamp":"2025-05-11T10:58:45.428Z"}
+{"correlationId":"c6f17fec-eaf6-4988-85b4-f253dd481e15","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:58:52.871Z"}
+{"correlationId":"c6f17fec-eaf6-4988-85b4-f253dd481e15","level":"warn","message":"Unauthorized order creation attempt","timestamp":"2025-05-11T10:58:52.873Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 401 51 - 2.141 ms - correlationId: c6f17fec-eaf6-4988-85b4-f253dd481e15","timestamp":"2025-05-11T10:58:52.874Z"}
+{"correlationId":"9b1bb0aa-3185-41a3-9455-b6347b426b87","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:58:56.985Z"}
+{"correlationId":"9b1bb0aa-3185-41a3-9455-b6347b426b87","level":"warn","message":"Unauthorized order creation attempt","timestamp":"2025-05-11T10:58:56.988Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 401 51 - 3.610 ms - correlationId: 9b1bb0aa-3185-41a3-9455-b6347b426b87","timestamp":"2025-05-11T10:58:56.990Z"}
+{"correlationId":"7b7f1b3f-8589-4c54-9aff-b7715ea2ffef","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T10:59:30.151Z"}
+{"correlationId":"7b7f1b3f-8589-4c54-9aff-b7715ea2ffef","level":"warn","message":"Unauthorized order creation attempt","timestamp":"2025-05-11T10:59:30.154Z"}
+{"correlationId":"http","level":"info","message":"POST /api/orders 401 51 - 3.164 ms - correlationId: 7b7f1b3f-8589-4c54-9aff-b7715ea2ffef","timestamp":"2025-05-11T10:59:30.155Z"}
+{"correlationId":"system","level":"info","message":"Cleaned up expired OTPs","timestamp":"2025-05-11T11:00:00.457Z"}
+{"correlationId":"c73d88ab-074e-4275-8ae3-10d3faa7dd42","level":"debug","message":"Generated correlation ID","timestamp":"2025-05-11T11:00:18.307Z"}
+{"correlationId":"c73d88ab-074e-4275-8ae3-10d3faa7dd42","level":"warn","message":"Unauthorized order access attempt","timestamp":"2025-05-11T11:00:18.310Z"}
+{"correlationId":"http","level":"info","message":"GET /api/orders 401 51 - 2.871 ms - correlationId: c73d88ab-074e-4275-8ae3-10d3faa7dd42","timestamp":"2025-05-11T11:00:18.311Z"}

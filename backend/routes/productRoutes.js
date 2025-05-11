@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { collections, ObjectId, database } = require('../utils/db');
+const { collections, ObjectId } = require('../utils/db');
 const { logger } = require('../middleware/logger');
+
+// console.log('productRoutes.js loaded');
 
 const bestSellingProductsPipeline = (productId) => [
   ...(productId ? [] : [{ $group: { _id: '$ProductID', totalQuantity: { $sum: '$Quantity' } } }]),
@@ -95,11 +97,17 @@ const bestSellingProductsPipeline = (productId) => [
 
 router.get('/best-selling', async (req, res) => {
   try {
+    console.log('GET /api/products/best-selling route hit', { correlationId: req.correlationId });
     console.log('Request received:', req.method, req.url, req.query);
 
     if (Object.keys(req.query).length > 0) {
       console.log('Query params not supported:', req.query);
       return res.status(400).json({ message: 'This endpoint does not accept query parameters' });
+    }
+
+    if (!collections.orderDetailCollection) {
+      logger.error('orderDetailCollection not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
     }
 
     const bestSellingProducts = await collections.orderDetailCollection
@@ -115,14 +123,21 @@ router.get('/best-selling', async (req, res) => {
     res.status(200).json(bestSellingProducts);
   } catch (err) {
     console.error('Aggregation error:', err.stack);
+    logger.error('Error in GET /best-selling', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
 
-router.get('/map-id/:productId', async (req, res) => {
+router.get('/map/:productId', async (req, res) => {
   try {
+    console.log('GET /api/products/map/:productId route hit', { correlationId: req.correlationId });
     const productId = req.params.productId;
     console.log('Request received for mapping ProductID to _id:', req.method, req.url, { productId });
+
+    if (!collections.productCollection) {
+      logger.error('productCollection not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
 
     const product = await collections.productCollection.findOne(
       { ProductID: productId },
@@ -137,14 +152,21 @@ router.get('/map-id/:productId', async (req, res) => {
     res.status(200).json({ _id: product._id.toHexString() });
   } catch (err) {
     console.error('Error mapping ProductID to _id:', err.stack);
+    logger.error('Error in GET /map/:productId', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ message: 'Lỗi server', error: err.message });
   }
 });
 
-router.get('/best-seller-detail/:productId', async (req, res) => {
+router.get('/best-detail/:productId', async (req, res) => {
   try {
+    console.log('GET /api/products/best-detail/:productId route hit', { correlationId: req.correlationId });
     const productId = req.params.productId;
     console.log('Request received for best-seller-detail:', req.method, req.url, { productId });
+
+    if (!collections.orderDetailCollection) {
+      logger.error('orderDetailCollection not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
 
     const pipeline = bestSellingProductsPipeline(productId);
     const result = await collections.orderDetailCollection.aggregate(pipeline).toArray();
@@ -158,15 +180,24 @@ router.get('/best-seller-detail/:productId', async (req, res) => {
     res.status(200).json(result[0]);
   } catch (err) {
     console.error('Aggregation error for best seller detail:', err.stack);
+    logger.error('Error in GET /best-detail/:productId', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ message: 'Lỗi server', error: err.message });
   }
 });
 
 router.get('/images/:imageId', async (req, res) => {
   try {
+    console.log('GET /api/products/images/:imageId route hit', { correlationId: req.correlationId });
+    if (!collections.imageCollection) {
+      logger.error('imageCollection not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
     const image = await collections.imageCollection.findOne({ ImageID: req.params.imageId });
-    if (!image)
+    if (!image) {
+      logger.warn('Image not found', { imageId: req.params.imageId, correlationId: req.correlationId });
       return res.status(404).json({ error: `Image not found for ID: ${req.params.imageId}` });
+    }
 
     res.json({
       ImageID: image.ImageID,
@@ -176,16 +207,25 @@ router.get('/images/:imageId', async (req, res) => {
       ProductImageSub3: image.ProductImageSub3 || '',
     });
   } catch (err) {
-    logger.error('Error fetching image:', { error: err.message, correlationId: req.correlationId });
+    logger.error('Error fetching image', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ error: err.message });
   }
 });
 
 router.get('/search', async (req, res) => {
-  const keyword = req.query.q;
-  if (!keyword) return res.status(400).json({ error: 'Keyword is required' });
-
   try {
+    console.log('GET /api/products/search route hit', { correlationId: req.correlationId });
+    const keyword = req.query.q;
+    if (!keyword) {
+      logger.warn('Missing keyword for search', { correlationId: req.correlationId });
+      return res.status(400).json({ error: 'Keyword is required' });
+    }
+
+    if (!collections.productCollection) {
+      logger.error('productCollection not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
     const suggestions = await collections.productCollection
       .find({
         ProductName: { $regex: keyword, $options: 'i' },
@@ -195,30 +235,36 @@ router.get('/search', async (req, res) => {
       .toArray();
     res.json(suggestions.map((s) => s.ProductName));
   } catch (err) {
-    logger.error('Error in GET /api/products/search', {
-      error: err.message,
-      correlationId: req.correlationId,
-    });
+    logger.error('Error in GET /search', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ error: err.message });
   }
 });
 
 router.get('/categories', async (req, res) => {
   try {
+    console.log('GET /api/products/categories route hit', { correlationId: req.correlationId });
+    if (!collections.categoryCollection) {
+      logger.error('categoryCollection not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
     const categories = await collections.categoryCollection.find().toArray();
     res.json(categories);
   } catch (err) {
-    logger.error('Error in GET /api/categories', {
-      error: err.message,
-      correlationId: req.correlationId,
-    });
+    logger.error('Error in GET /categories', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ error: err.message });
   }
 });
 
 router.get('/', async (req, res) => {
   try {
+    console.log('GET /api/products route hit', { correlationId: req.correlationId });
     console.log('📢 API `/api/products` đã được gọi!');
+
+    if (!collections.productCollection || !collections.productstockCollection || !collections.reviewCollection || !collections.categoryCollection || !collections.promotionCollection) {
+      logger.error('One or more collections not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
 
     const page = Math.max(1, parseInt(req.query.page) || 1);
     const limit = Math.min(50, Math.max(1, parseInt(req.query.limit) || 12));
@@ -253,8 +299,7 @@ router.get('/', async (req, res) => {
     const productIDs = items.map((p) => p.ProductID);
     const promotionIDs = items.map((p) => p.PromotionID).filter((id) => id !== null);
 
-    const productsWithImages = await database
-      .collection('products')
+    const productsWithImages = await collections.productCollection
       .aggregate([
         { $match: { ProductID: { $in: productIDs } } },
         {
@@ -300,11 +345,11 @@ router.get('/', async (req, res) => {
       .find({ ProductID: { $in: productIDs } })
       .toArray();
     const stockMap = stocks.reduce((acc, stock) => {
-        acc[stock.ProductID] = stock.StockQuantity;
+      acc[stock.ProductID] = stock.StockQuantity;
       return acc;
     }, {});
 
-    const promotions = await database.collection('promotions').find({ PromotionID: { $in: promotionIDs } }).toArray();
+    const promotions = await collections.promotionCollection.find({ PromotionID: { $in: promotionIDs } }).toArray();
     const promotionMap = promotions.reduce((acc, promo) => {
       acc[promo.PromotionID] = {
         startDate: new Date(promo.PromotionStartDate),
@@ -339,7 +384,7 @@ router.get('/', async (req, res) => {
       return acc;
     }, {});
 
-    const currentDate = new Date('2025-03-11');
+    const currentDate = new Date();
 
     const productsWithDetails = items.map(p => {
       const stockQuantity = stockMap[p.ProductID] || 0;
@@ -397,13 +442,19 @@ router.get('/', async (req, res) => {
     });
   } catch (err) {
     console.error('❌ Lỗi chi tiết:', err.stack);
-    logger.error('Error in GET /products', { error: err.message, correlationId: req.correlationId });
+    logger.error('Error in GET /', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ error: err.message });
   }
 });
 
 router.get('/filters', async (req, res) => {
   try {
+    console.log('GET /api/products/filters route hit', { correlationId: req.correlationId });
+    if (!collections.categoryCollection || !collections.productCollection) {
+      logger.error('Collections not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
     const categories = await collections.categoryCollection.find().toArray();
     const brands = await collections.productCollection.distinct('ProductBrand');
     const wineVolumes = await collections.productCollection.distinct('WineVolume');
@@ -417,6 +468,12 @@ router.get('/filters', async (req, res) => {
 
 router.get('/recommendations', async (req, res) => {
   try {
+    console.log('GET /api/products/recommendations route hit', { correlationId: req.correlationId });
+    if (!collections.productCollection) {
+      logger.error('productCollection not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
     const bestSellers = await collections.productCollection.find({ isBestSeller: true }).limit(5).toArray();
     const promotions = await collections.productCollection.find({ isPromotion: true }).limit(5).toArray();
     res.json({ bestSellers, promotions });
@@ -428,7 +485,13 @@ router.get('/recommendations', async (req, res) => {
 
 router.get('/full-details', async (req, res) => {
   try {
-    const productsWithDetails = await database.collection('products').aggregate([
+    console.log('GET /api/products/full-details route hit', { correlationId: req.correlationId });
+    if (!collections.productCollection || !collections.productstockCollection || !collections.categoryCollection) {
+      logger.error('Collections not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
+    const productsWithDetails = await collections.productCollection.aggregate([
       {
         $lookup: {
           from: "productstocks",
@@ -492,15 +555,22 @@ router.get('/full-details', async (req, res) => {
     res.json({ data: productsWithDetails });
   } catch (err) {
     console.error('Lỗi trong API /products-full-details:', err);
+    logger.error('Error in GET /full-details', { error: err.message, correlationId: req.correlationId });
     res.status(500).json({ error: err.message });
   }
 });
 
 router.get('/:id', async (req, res) => {
   try {
+    console.log('GET /api/products/:id route hit', { correlationId: req.correlationId });
     if (!ObjectId.isValid(req.params.id)) {
       logger.warn('Invalid ObjectId provided', { id: req.params.id, correlationId: req.correlationId });
       return res.status(400).json({ message: 'ID sản phẩm không hợp lệ.' });
+    }
+
+    if (!collections.productCollection || !collections.productstockCollection || !collections.imageCollection || !collections.reviewCollection || !collections.promotionCollection) {
+      logger.error('Collections not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
     }
 
     const productId = new ObjectId(req.params.id);
@@ -517,10 +587,10 @@ router.get('/:id', async (req, res) => {
     let isOnSale = false;
     let currentPrice = product.ProductPrice || 0;
     let discountPercentage = 0;
-    const currentDate = new Date('2025-03-11');
+    const currentDate = new Date();
 
     if (product.PromotionID) {
-      const promo = await database.collection('promotions').findOne({ PromotionID: product.PromotionID });
+      const promo = await collections.promotionCollection.findOne({ PromotionID: product.PromotionID });
       if (promo) {
         const startDate = new Date(promo.PromotionStartDate);
         const expiredDate = new Date(promo.PromotionExpiredDate);

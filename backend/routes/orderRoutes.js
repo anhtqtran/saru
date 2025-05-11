@@ -4,19 +4,41 @@ const { collections, ObjectId } = require('../utils/db');
 const { logger } = require('../middleware/logger');
 const { authenticateToken } = require('../middleware/auth');
 
+console.log('orderRoutes.js loaded');
+
 router.post('/', authenticateToken, async (req, res) => {
-  if (!req.isAuthenticated) {
-    logger.warn('Unauthorized order creation attempt', { correlationId: req.correlationId });
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
-  const { items, shippingAddress, paymentMethod } = req.body;
-  if (!items || !Array.isArray(items) || items.length === 0 || !shippingAddress || !paymentMethod) {
-    logger.warn('Missing required fields for order creation', { body: req.body, correlationId: req.correlationId });
-    return res.status(400).json({ message: 'Missing required fields' });
-  }
-
   try {
+    console.log('POST /api/orders route hit', { correlationId: req.correlationId });
+
+    // Check authentication
+    if (!req.account || !req.account.CustomerID || !req.account.AccountID) {
+      logger.warn('Unauthorized order creation attempt', { correlationId: req.correlationId });
+      return res.status(401).json({ message: 'Unauthorized: Missing account details' });
+    }
+
+    const { items, shippingAddress, paymentMethod } = req.body;
+
+    // Validate input
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      logger.warn('Missing or invalid items', { body: req.body, correlationId: req.correlationId });
+      return res.status(400).json({ message: 'Items are required and must be a non-empty array' });
+    }
+    if (!shippingAddress || typeof shippingAddress !== 'object' || !shippingAddress.address || !shippingAddress.city) {
+      logger.warn('Invalid shipping address', { body: req.body, correlationId: req.correlationId });
+      return res.status(400).json({ message: 'Shipping address is required with address and city' });
+    }
+    if (!paymentMethod || !['CreditCard', 'CashOnDelivery', 'BankTransfer'].includes(paymentMethod)) {
+      logger.warn('Invalid payment method', { body: req.body, correlationId: req.correlationId });
+      return res.status(400).json({ message: 'Payment method is required and must be CreditCard, CashOnDelivery, or BankTransfer' });
+    }
+
+    // Validate collections
+    if (!collections.productCollection || !collections.productstockCollection || !collections.orderCollection || !collections.orderDetailCollection) {
+      logger.error('Collections not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
+    // Fetch products and stock
     const productIDs = items.map(item => item.productId);
     const products = await collections.productCollection
       .find({ ProductID: { $in: productIDs } })
@@ -34,71 +56,120 @@ router.post('/', authenticateToken, async (req, res) => {
       return acc;
     }, {});
 
+    // Validate items and stock
     for (const item of items) {
-      if (!productMap[item.productId] || stockMap[item.productId] < item.quantity) {
-        logger.warn('Invalid or insufficient stock for product', { productId: item.productId, correlationId: req.correlationId });
-        return res.status(400).json({ message: `Product ${item.productId} is out of stock or invalid` });
+      if (!item.productId || !item.quantity || item.quantity <= 0) {
+        logger.warn('Invalid item format', { item, correlationId: req.correlationId });
+        return res.status(400).json({ message: `Invalid item: ${JSON.stringify(item)}` });
+      }
+      if (!productMap[item.productId]) {
+        logger.warn('Product not found', { productId: item.productId, correlationId: req.correlationId });
+        return res.status(400).json({ message: `Product ${item.productId} does not exist` });
+      }
+      if (stockMap[item.productId] === undefined || stockMap[item.productId] < item.quantity) {
+        logger.warn('Insufficient stock for product', { productId: item.productId, quantity: item.quantity, stock: stockMap[item.productId], correlationId: req.correlationId });
+        return res.status(400).json({ message: `Product ${item.productId} is out of stock or has insufficient quantity` });
       }
     }
 
-    const orderID = `order_${Date.now()}`;
+    // Create order
+    const orderID = `order_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const newOrder = {
       OrderID: orderID,
       CustomerID: req.account.CustomerID,
       OrderDate: new Date(),
-      ShippingAddress: shippingAddress,
+      ShippingAddress: {
+        address: shippingAddress.address,
+        city: shippingAddress.city,
+        postalCode: shippingAddress.postalCode || '',
+        country: shippingAddress.country || 'Vietnam'
+      },
       PaymentMethod: paymentMethod,
       Status: 'Pending',
       TotalAmount: items.reduce((sum, item) => sum + (productMap[item.productId].ProductPrice * item.quantity), 0)
     };
-    await collections.orderCollection.insertOne(newOrder);
 
-    const orderDetails = items.map(item => ({
-      OrderID: orderID,
-      ProductID: item.productId,
-      Quantity: item.quantity,
-      Price: productMap[item.productId].ProductPrice
-    }));
-    await collections.orderDetailCollection.insertMany(orderDetails);
+    // Atomic stock update and order creation
+    const session = collections.productCollection.client.startSession();
+    try {
+      await session.withTransaction(async () => {
+        // Insert order
+        await collections.orderCollection.insertOne(newOrder, { session });
 
-    for (const item of items) {
-      await collections.productstockCollection.updateOne(
-        { ProductID: item.productId },
-        { $inc: { StockQuantity: -item.quantity } }
-      );
+        // Insert order details
+        const orderDetails = items.map(item => ({
+          OrderID: orderID,
+          ProductID: item.productId,
+          Quantity: item.quantity,
+          Price: productMap[item.productId].ProductPrice
+        }));
+        await collections.orderDetailCollection.insertMany(orderDetails, { session });
+
+        // Update stock atomically
+        for (const item of items) {
+          const updateResult = await collections.productstockCollection.updateOne(
+            { ProductID: item.productId, StockQuantity: { $gte: item.quantity } },
+            { $inc: { StockQuantity: -item.quantity } },
+            { session }
+          );
+          if (updateResult.matchedCount === 0) {
+            throw new Error(`Stock update failed for product ${item.productId}: insufficient stock or product not found`);
+          }
+        }
+      });
+    } finally {
+      await session.endSession();
     }
 
-    if (req.isAuthenticated) {
-      await collections.database.collection('carts').deleteOne({ AccountID: req.account.AccountID });
+    // Clear cart (assume cartCollection is defined in db.js)
+    if (collections.cartCollection) {
+      await collections.cartCollection.deleteOne({ AccountID: req.account.AccountID });
     } else {
-      req.session.cart = [];
+      logger.warn('cartCollection not initialized, skipping cart deletion', { correlationId: req.correlationId });
     }
 
-    logger.info('Order created', { orderId: orderID, customerId: req.account.CustomerID, correlationId: req.correlationId });
+    logger.info('Order created successfully', { orderId: orderID, customerId: req.account.CustomerID, correlationId: req.correlationId });
     res.status(201).json({ message: 'Order created successfully', order: newOrder });
   } catch (err) {
-    logger.error('Error in POST /orders', { error: err.message, correlationId: req.correlationId });
-    res.status(500).json({ error: err.message });
+    logger.error('Error in POST /orders', { error: err.message, stack: err.stack, correlationId: req.correlationId });
+    res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
 
 router.get('/', authenticateToken, async (req, res) => {
-  if (!req.isAuthenticated) {
-    logger.warn('Unauthorized order access attempt', { correlationId: req.correlationId });
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
   try {
+    console.log('GET /api/orders route hit', { correlationId: req.correlationId });
+
+    // Check authentication
+    if (!req.account || !req.account.CustomerID) {
+      logger.warn('Unauthorized order access attempt', { correlationId: req.correlationId });
+      return res.status(401).json({ message: 'Unauthorized: Missing account details' });
+    }
+
+    // Validate collections
+    if (!collections.orderCollection || !collections.orderDetailCollection || !collections.productCollection) {
+      logger.error('Collections not initialized', { correlationId: req.correlationId });
+      return res.status(500).json({ message: 'Database not initialized' });
+    }
+
+    // Fetch orders
     const orders = await collections.orderCollection
       .find({ CustomerID: req.account.CustomerID })
       .sort({ OrderDate: -1 })
       .toArray();
 
+    if (!orders.length) {
+      logger.info('No orders found', { customerId: req.account.CustomerID, correlationId: req.correlationId });
+      return res.status(200).json([]);
+    }
+
+    // Fetch order details
     const orderIDs = orders.map(order => order.OrderID);
     const orderDetails = await collections.orderDetailCollection
       .find({ OrderID: { $in: orderIDs } })
       .toArray();
 
+    // Fetch products
     const productIDs = [...new Set(orderDetails.map(detail => detail.ProductID))];
     const products = await collections.productCollection
       .find({ ProductID: { $in: productIDs } })
@@ -108,8 +179,10 @@ router.get('/', authenticateToken, async (req, res) => {
       return acc;
     }, {});
 
+    // Combine orders with details
     const ordersWithDetails = orders.map(order => ({
       ...order,
+      _id: order._id.toHexString(),
       items: orderDetails
         .filter(detail => detail.OrderID === order.OrderID)
         .map(detail => ({
@@ -117,15 +190,14 @@ router.get('/', authenticateToken, async (req, res) => {
           quantity: detail.Quantity,
           price: detail.Price,
           productName: productMap[detail.ProductID]?.ProductName || 'Unknown'
-        })),
-      _id: order._id.toHexString()
+        }))
     }));
 
-    logger.info('Fetched orders', { customerId: req.account.CustomerID, count: orders.length, correlationId: req.correlationId });
-    res.json(ordersWithDetails);
+    logger.info('Fetched orders successfully', { customerId: req.account.CustomerID, count: orders.length, correlationId: req.correlationId });
+    res.status(200).json(ordersWithDetails);
   } catch (err) {
-    logger.error('Error in GET /orders', { error: err.message, correlationId: req.correlationId });
-    res.status(500).json({ error: err.message });
+    logger.error('Error in GET /orders', { error: err.message, stack: err.stack, correlationId: req.correlationId });
+    res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
 
